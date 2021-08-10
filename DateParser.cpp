@@ -45,20 +45,23 @@ int main () {
         size_t pos = date.find(' ');
         month = date.substr(0, pos);
         month = to_string(DateParser(month));
-        
         //if not a valid month then skip the rest of this iteration
         if(month == "0") continue;
 
         size_t pos2 = date.find(",");
         year = date.substr(pos2+2);
-        cout << year << endl;
 
-    }
-
-    if(month != "0"){
+        day = date.substr(pos+1,pos2 - 9);
+        
+        if(month != "0"){
             cout << month << "/" << day << "/" << year << endl;
         }
+    }
 
+
+
+
+    
 }
 
 
